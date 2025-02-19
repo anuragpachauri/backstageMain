@@ -21,6 +21,9 @@ Provides integration with Azure to fetch resource data based on tags.
 ### [Azure Resource](./plugins/azure-resource)
 Displays Azure resources on the frontend of Backstage using information retrieved from the Azure Backend plugin.
 
+### [linode Resource](./plugins/azure-resource)
+Displays linode resources on the frontend of Backstage using information retrieved from the linode Backend plugin.
+
 ## Setup
 
 1. Clone this repository:
