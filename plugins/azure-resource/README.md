@@ -42,7 +42,7 @@ yarn --cwd packages/app add @anuragpachauri/azure-resource
 
 Ensure the backend plugin for Azure resources is configured to query resources using the Azure Resource Graph API.
 
-https://github.com/anuragpachauri/azure-backend
+https://github.com/anuragpachauri/backstageMain/tree/main/plugins/azure-backend
 
 Refer to the backend plugin documentation for detailed setup instructions.
 
