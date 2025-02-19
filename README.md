@@ -6,6 +6,8 @@ This repository contains a Backstage instance with the following custom plugins:
 - [Jira Home Backend](./plugins/jira-home-backend)
 - [Azure Backend](./plugins/azure-backend)
 - [Azure Resource](./plugins/azure-resource)
+- [linode-resource Backend](./plugins/linode-resource-backend)
+- [linode Resource](./plugins/linode-resource)
 
 ## Plugins
 
@@ -20,6 +22,9 @@ Provides integration with Azure to fetch resource data based on tags.
 
 ### [Azure Resource](./plugins/azure-resource)
 Displays Azure resources on the frontend of Backstage using information retrieved from the Azure Backend plugin.
+
+### [linode-Backend](./plugins/linode-resource-backend)
+Provides integration with Azure to fetch resource data based on tags.
 
 ### [linode Resource](./plugins/linode-resource)
 Displays linode resources on the frontend of Backstage using information retrieved from the linode Backend plugin.
