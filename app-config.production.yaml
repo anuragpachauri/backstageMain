@@ -1,0 +1,148 @@
+app:
+  baseUrl: http://localhost:7007
+  publicPath: http://localhost:7007
+
+    
+# permission:
+#   enabled: true
+#   rbac:
+#     pluginsWithPermission:
+#       - catalog
+#       - scaffolder
+#       - permission
+#     admin:
+#       users:
+#         - name: user:default/anurag.pachauri_infracloud.io
+#       groups:
+#         - name: Group:default/backstage
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  csp:
+    connect-src: ["'self'", 'http:', 'https:']
+    upgrade-insecure-requests: false
+
+  database:
+    client: pg
+    connection:
+      host:
+        $env: POSTGRES_HOST
+      port:
+        $env: POSTGRES_PORT
+      user:
+        $env: POSTGRES_USER
+      password:
+        $env: POSTGRES_PASSWORD
+      database:
+        $env: POSTGRES_DATABASE
+    
+  #   img-src: ["*", "data:"]
+  #   frame-src:
+  #     - 'https://us5.datadoghq.com'
+  #     - 'https://p.us5.datadoghq.com/sb/85cfa16b-6394-11ef-b68e-a2c6e293d47f-cc6a1c68f238e7e554194ebfcc44ec54'
+  #     - 'https://*.datadoghq.com'
+  # cors:
+  #   origin: ['http://172.232.87.64:7007', 'https://172.232.87.64' , 'https://172.232.87.64:7007', 'http://172.232.87.64']
+  #   methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+  #   credentials: true
+
+  # config options: https://node-postgres.com/apis/client
+
+
+integrations:
+  github:
+    - host: github.com
+      token:
+        $env: GITHUB_TOKEN
+        
+
+auth:
+  environment: production
+  providers:    
+    github:
+      production:
+        clientId: 
+          $env: GITHUB_CLIENT_ID
+        clientSecret: 
+          $env: GITHUB_CLIENT_SECRET
+        signIn:
+          resolvers:
+            - resolver: emailMatchingUserEntityProfileEmail
+    
+
+linode:
+  baseUrl: https://api.linode.com/v4
+  apiKey: 
+    $env: LINODE_API_KEY
+
+catalog:
+  providers:
+    githubOrg:
+      - id: github
+        githubUrl: https://github.com
+        orgs: ['infra-enterprise']
+        schedule:
+          initialDelay: { seconds: 30 }
+          frequency: { hours: 1 }
+          timeout: { minutes: 50 }
+  # providers:
+  #   microsoftGraphOrg:
+  #     default:
+  #       clientId:
+  #         $env: AZURE_CLIENT_ID
+  #       clientSecret: 
+  #         $env: AZURE_CLIENT_SECRET
+  #       tenantId:
+  #         $env: AZURE_TENANTID_ID
+  #       user:
+  #         filter: accountEnabled eq true and userType eq 'member'
+  #       group:
+  #         filter: >
+  #           securityEnabled eq true
+  #           and mailEnabled eq false
+  #       schedule:
+  #         frequency: PT1H
+  #         timeout: PT50M
+  import:
+    entityFilename: catalog-info.yaml
+    pullRequestBranchName: backstage-integration
+  rules:
+    - allow: [Component, System, API, Resource, Location]
+  locations:
+    - type: file
+      target: ./examples/entities.yaml
+
+    # Local example template
+    - type: file
+      target: ./examples/template/template.yaml
+      rules:
+        - allow: [Template]
+    - type: file
+      target: ./linode_resource/template/template.yaml
+      rules:
+        - allow: [Template]
+    - type: url
+      target: https://github.com/anuragpachauri/test-service/blob/master/catalog-info.yaml
+
+    - type: file
+      target: ./examples/org.yaml
+      rules:
+        - allow: [User, Group]
+
+kubernetes:
+  # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods:
+    - type: 'config'
+      clusters:
+        - url:
+            $env: CLUSTER_URL
+          name: local
+          authProvider: 'serviceAccount'
+          serviceAccountToken: 
+            $env: CLUSTER_SERVICE_ACCOUNT_TOKEN
+          skipTLSVerify: true
+          skipMetricsLookup: true

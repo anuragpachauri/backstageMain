@@ -1,0 +1,1 @@
+export { JiraAssigntoMe } from './ExampleComponent';
