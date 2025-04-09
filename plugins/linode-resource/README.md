@@ -6,7 +6,7 @@ _This plugin was created through the Backstage CLI._
 
 ---
 
-![Alt text](https://i.ibb.co/3FPzKLx/Screenshot-from-2025-01-16-14-08-18.png 'title image')
+![Alt text](https://i.ibb.co/ZRvBBn2r/image-1.png 'title image')
 
 ## Features
 
