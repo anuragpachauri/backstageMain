@@ -1,6 +1,6 @@
-# Azure Resource Plugin
+# jira home Plugin
 
-Welcome to the **Azure Resource Plugin**!
+Welcome to the **jira home Plugin**!
 
 _This plugin was created through the Backstage CLI._
 

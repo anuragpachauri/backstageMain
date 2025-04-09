@@ -11,13 +11,6 @@ _This plugin was created through the Backstage CLI._
 - it run a query on jira cli to import issue based on user
 
 ---
-
-## Limitations
-
-- Supports jira issue assigned to perticular user  **Azure Resource Graph API**.
-
----
-
 ## Setup
 
 ### Installation and Configuration
