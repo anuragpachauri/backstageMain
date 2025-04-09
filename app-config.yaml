@@ -153,6 +153,7 @@ linode:
   baseUrl: https://api.linode.com/v4
   apiKey: ${LINODE_API_KEY}
 
+
 kubernetes:
   serviceLocatorMethod:
     type: 'multiTenant'

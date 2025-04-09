@@ -39,6 +39,15 @@ yarn --cwd packages/app add @anuragpachauri/linode-resource-backend
 ```bash
 backend.add(import('@anuragpachauri/linode-resource-backend'))
 ```
+#### 2. add configuration in app-config.yaml
+
+```bash
+
+linode:
+  baseUrl: https://api.linode.com/v4
+  apiKey: ${LINODE_API_KEY}
+  
+```
 
 After registration, add the linode resource plugin to Configure Front-end
 https://github.com/anuragpachauri/backstageMain/tree/main/plugins/linode-resource

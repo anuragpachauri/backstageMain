@@ -40,6 +40,15 @@ yarn --cwd packages/app add @anuragpachauri/azure-backend
 ```bash
 backend.add(import('@anuragpachauri/azure-backend'));
 ```
+#### 2. add configuration in app-config.yaml
+
+```bash
+azure:
+  subscriptionId: ${AZURE_SUBSCRIPTIONId}
+  tenantId: ${AZURE_TENANTID_ID}
+  clientId: ${AZURE_CLIENT_ID}
+  clientSecret: ${AZURE_CLIENT_SECRET}
+```
 
 After registration, add the azure resource plugin to Configure Front-end
 https://github.com/anuragpachauri/backstageMain/tree/main/plugins/azure-resource

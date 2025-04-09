@@ -37,7 +37,7 @@ yarn --cwd packages/app add @anuragpachauri/jira-home
 
 Ensure the backend plugin for jira home is configured to query resources.
 
-https://github.com/anuragpachauri/jira-home-backend
+https://github.com/anuragpachauri/backstageMain/tree/main/plugins/jira-home-backend
 
 Refer to the backend plugin documentation for detailed setup instructions.
 

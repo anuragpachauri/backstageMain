@@ -53,7 +53,8 @@ jira:
 
 
 After registration, add the azure resource plugin to Configure Front-end
-https://github.com/anuragpachauri/jira-home
+
+https://github.com/anuragpachauri/backstageMain/tree/main/plugins/jira-home
 
 Future Enhancements
 Support for additional Azure services beyond those accessible via the Resource Graph API.
