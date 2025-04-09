@@ -1,14 +1,52 @@
-# linode-resource
+# Linode Resource Backend Plugin
 
-Welcome to the linode-resource backend plugin!
+Welcome to the **Linode Resource backend Plugin**!
 
-_This plugin was created through the Backstage CLI_
+_This plugin was created through the Backstage CLI._
 
-## Getting started
+---
 
-Your plugin has been added to the example app in this repository, meaning you'll be able to access it by running `yarn
-start` in the root directory, and then navigating to [/linode-resource/health](http://localhost:7007/api/linode-resource/health).
+## Features
 
-You can also serve the plugin in isolation by running `yarn start` in the plugin directory.
-This method of serving the plugin provides quicker iteration speed and a faster startup and hot reloads.
-It is only meant for local development, and the setup for it can be found inside the [/dev](./dev) directory.
+- it sends a Api request to Linode Server to fetch the resource Details
+
+---
+
+## Limitations
+
+- Supports only linode resources **linode Resource Graph API**.
+
+---
+
+## Setup
+
+### Installation and Configuration
+
+To set up the linode Resource backend Plugin in your Backstage instance, follow these steps:
+
+#### 1. Install the Plugin
+
+Run the following command in the backend directory of your Backstage project:
+
+```bash
+yarn --cwd packages/app add @anuragpachauri/linode-resource-backend
+```
+
+### Configuration
+
+#### 1. add these line in packages/backend/src/index.ts
+
+```bash
+backend.add(import('@anuragpachauri/linode-resource-backend'))
+```
+
+After registration, add the linode resource plugin to Configure Front-end
+https://github.com/anuragpachauri/backstageMain/tree/main/plugins/linode-resource
+
+Future Enhancements
+Support for additional linode services beyond those accessible via the Resource Graph API.
+
+Enhanced filtering and sorting capabilities.
+Feedback
+
+Feel free to suggest changes or report issues by creating a GitHub issue.

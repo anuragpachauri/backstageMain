@@ -2,7 +2,6 @@ variable "linode_token" {
   description = "Linode API Token"
   type        = string
   sensitive   = true
-  # default     = "facdddfc7ef238a8d431fe7cd9f6611171e86bab96c1e27e23f8f84a6d8d024f"
 
 }
 

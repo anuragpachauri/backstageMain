@@ -42,7 +42,7 @@ backend.add(import('@anuragpachauri/azure-backend'));
 ```
 
 After registration, add the azure resource plugin to Configure Front-end
-https://github.com/anuragpachauri/azure-resource
+https://github.com/anuragpachauri/backstageMain/tree/main/plugins/azure-resource
 
 Future Enhancements
 Support for additional Azure services beyond those accessible via the Resource Graph API.
